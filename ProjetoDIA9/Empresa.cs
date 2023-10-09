@@ -9,15 +9,28 @@ namespace ProjetoDIA9
     internal class Empresa
     {
         private string nome { get; set; }
+        private List <Empregado> empregados = new List<Empregado>();
+        
 
-        public void CadastrarEmpregado()
+
+        public void CadastrarEmpregado(Empregado empregado)
         {
+            empregados.Add(empregado);
             
         }
         public void ListarTodosEmpregados()
-        { 
+        {
+            Console.WriteLine("Lista dos empregados:");
+            foreach (var empregado in empregados)
+            {
+                Console.WriteLine(empregado);
+            }          
 
         }
+        
+        
+        
+        
         public void Promover(string primeiroNome, string sobrenome) 
         {
 

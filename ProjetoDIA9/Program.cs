@@ -1,4 +1,7 @@
-﻿namespace ProjetoDIA9
+﻿using System;
+using ProjetoDIA9;
+
+namespace ProjetoDIA9
 {
     internal class Program
     {
@@ -22,8 +25,31 @@
                 switch (op)
                 {
                     case 1:
+                        Console.WriteLine("Digite o primeiro nome do empregado:");
+                        string primeiroNome= Console.ReadLine();
+                        Console.WriteLine("Digite o sobrenome do empregado:");
+                        string sobrenome = Console.ReadLine();
+                        Console.WriteLine("Digite a matricula:");
+                        string matricula = Console.ReadLine();
+                        Console.WriteLine("Digite a idade:");
+                        int idade = int.Parse( Console.ReadLine());
+                        Console.WriteLine("Digite a data de nascimento do empregado:");
+                        string dataDeNascimento = Console.ReadLine();
+                        Console.WriteLine("Digite a data de contratacao do empregado:");
+                        string dataDeContratacao = Console.ReadLine();
+                        Console.WriteLine("Digite o salario  do empregado:");
+                        double salarioMensal = double.Parse(Console.ReadLine());
+
+                        Empregado empregado = new Empregado(primeiroNome, sobrenome, matricula, dataDeNascimento, dataDeContratacao, salarioMensal);
+                        empresa.CadastrarEmpregado(empregado);
+                        break;
+
+
+
 
                     case 2:
+                        empresa.ListarTodosEmpregados(); 
+                        break;
 
 
                     case 3:
@@ -36,6 +62,7 @@
 
 
                     case 6:
+                        Environment.Exit(0);
                         break;
                 }
             }
