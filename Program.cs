@@ -1,7 +1,8 @@
 ﻿using System;
-using ProjetoDIA9;
+using Projeto;
 
-namespace ProjetoDIA9
+
+namespace Projeto
 {
     internal class Program
     {
@@ -21,18 +22,18 @@ namespace ProjetoDIA9
                 Console.WriteLine("Escolhe uma opçao:");
 
                 int op = int.Parse(Console.ReadLine());
-                    
+
                 switch (op)
                 {
                     case 1:
                         Console.WriteLine("Digite o primeiro nome do empregado:");
-                        string primeiroNome= Console.ReadLine();
+                        string primeiroNome = Console.ReadLine();
                         Console.WriteLine("Digite o sobrenome do empregado:");
                         string sobrenome = Console.ReadLine();
                         Console.WriteLine("Digite a matricula:");
                         string matricula = Console.ReadLine();
                         Console.WriteLine("Digite a idade:");
-                        int idade = int.Parse( Console.ReadLine());
+                        int idade = int.Parse(Console.ReadLine());
                         Console.WriteLine("Digite a data de nascimento do empregado:");
                         string dataDeNascimento = Console.ReadLine();
                         Console.WriteLine("Digite a data de contratacao do empregado:");
@@ -48,22 +49,50 @@ namespace ProjetoDIA9
 
 
                     case 2:
-                        empresa.ListarTodosEmpregados(); 
+                        empresa.ListarTodosEmpregados();
                         break;
 
 
                     case 3:
+                        Console.WriteLine("Digite o nome do empregado:");
+                        string nomePromover = Console.ReadLine();
+                        Console.WriteLine("Digite o sobrenome do empregado:");
+                        string sobrenomePromover = Console.ReadLine();
+                        empresa.Promover(nomePromover, sobrenomePromover);
+                        break;
+
 
 
                     case 4:
+                        Console.WriteLine("Digite o nome do empregado:");
+                        string nomeDemitir = Console.ReadLine();
+                        Console.WriteLine("Digite o sobrenome do empregado:");
+                        string sobrenomeDemitir = Console.ReadLine();
+                        empresa.Demitir(nomeDemitir, sobrenomeDemitir);
+                        break;
 
 
                     case 5:
+                        Console.WriteLine("Digite o nome do empregado:");
+                        string nomeSalarioAnual= Console.ReadLine();
+                        Console.WriteLine("Digite o sobrenome do empregado:");
+                        string sobrenomeSalarioAnual = Console.ReadLine();
+                        empresa.ListarSalarioAnual(nomeSalarioAnual,sobrenomeSalarioAnual)
+                        ; break;
 
 
                     case 6:
                         Environment.Exit(0);
                         break;
+
+                    /*case 7:
+                        Console.WriteLine("Digite o nome do empregado:");
+                        string nomeSalario = Console.ReadLine();
+                        Console.WriteLine("Digite o sobrenome do empregado:");
+                        string sobrenomeSalario = Console.ReadLine();
+                        empresa.ListarSalario(nomeSalario, sobrenomeSalario)
+                        
+                        ; break;*/
                 }
             }
 

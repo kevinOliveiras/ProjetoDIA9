@@ -1,8 +1,8 @@
 ﻿using System;
+using Projeto;
 
 
-
-namespace ProjetoDIA9
+namespace Projeto
 {
     internal class Empregado
     {
@@ -10,8 +10,8 @@ namespace ProjetoDIA9
         public string Sobrenome { get; private set; }
         public string Matricula { get; private set; }
         public int Idade { get; private set; }
-        public string DataDeContratacao { get; private set; }
-        public string DataDeNascimento { get; private set; }
+        public string DataDeContratacao { get;  private set; }
+        public string DataDeNascimento { get;private set; }
         private double salarioMensal;
         public double salarioMinimo = 1320;
 
