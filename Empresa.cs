@@ -2,21 +2,30 @@
 using System;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// Esta classe representa uma empresa e mantém uma lista de empregados. Ela oferece métodos para cadastrar empregados,
+/// listar todos os empregados, promover, demitir e listar o salário anual de um empregado.
+/// </summary>
 namespace Projeto
 {
     internal class Empresa
     {
-        
+        // Lista para armazenar empregados da empresa
         private List<Empregado> empregados = new List<Empregado>();
 
-
-
+        /// <summary>
+        /// Método para cadastrar um empregado na empresa.
+        /// </summary>
+        /// <param name="empregado">O empregado a ser cadastrado.</param>
         public void CadastrarEmpregado(Empregado empregado)
         {
             empregados.Add(empregado);
 
         }
+        
+        /// <summary>
+        /// Método para listar todos os empregados da empresa.
+        /// </summary>
         public void ListarTodosEmpregados()
         {
             Console.WriteLine("Lista dos empregados:");
@@ -27,9 +36,11 @@ namespace Projeto
 
         }
 
-
-
-
+        /// <summary>
+        /// Método para promover um empregado, aumentando seu salário em 10%.
+        /// </summary>
+        /// <param name="nome">O nome do empregado a ser promovido.</param>
+        /// <param name="sobrenome">O sobrenome do empregado a ser promovido.</param>
         public void Promover(string nome, string sobrenome)
         {
             Empregado empregado= empregados.Find(e => e.Nome==nome && e.Sobrenome==sobrenome);
@@ -43,6 +54,12 @@ namespace Projeto
                 Console.WriteLine("Empregado nao encontrado.\n");
             }
         }
+        
+        /// <summary>
+        /// Demite um empregado da empresa.
+        /// </summary>
+        /// <param name="nome">O nome do empregado a ser demitido.</param>
+        /// <param name="sobrenome">O sobrenome do empregado a ser demitido.</param>
         public void Demitir(string nome, string sobrenome)
         {
             Empregado empregado = empregados.Find(e => e.Nome == nome && e.Sobrenome == sobrenome);
@@ -58,6 +75,12 @@ namespace Projeto
 
 
         }
+        
+        /// <summary>
+        /// Lista o salário anual de um empregado.
+        /// </summary>
+        /// <param name="nome">O nome do empregado.</param>
+        /// <param name="sobrenome">O sobrenome do empregado.</param>
         public void ListarSalarioAnual(string nome, string sobrenome)
         {
             Empregado empregado = empregados.Find(e => e.Nome == nome && e.Sobrenome == sobrenome);
