@@ -1,17 +1,22 @@
 ﻿using System;
 using Projeto;
 
-
+/// <summary>
+/// Esta classe contém o método de entrada (Main) que cria uma instância da classe Empresa e permite ao usuário
+/// interagir com o sistema para cadastrar, listar, promover, demitir e listar o salário anual de empregados.
+/// </summary>
 namespace Projeto
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            // Cria uma instância da classe Empresa
             Empresa empresa = new Empresa();
 
             while (true)
             {
+                 // Exibe o menu de opções
                 Console.WriteLine("Menu:");
                 Console.WriteLine("1. Cadastrar Empregado:");
                 Console.WriteLine("2. Listar todos Empregados:");
@@ -26,6 +31,7 @@ namespace Projeto
                 switch (op)
                 {
                     case 1:
+                        // Solicita informações do empregado e cadastra na empresa
                         Console.WriteLine("Digite o primeiro nome do empregado:");
                         string primeiroNome = Console.ReadLine();
                         Console.WriteLine("Digite o sobrenome do empregado:");
@@ -49,11 +55,13 @@ namespace Projeto
 
 
                     case 2:
+                        // Lista todos os empregados da empresa
                         empresa.ListarTodosEmpregados();
                         break;
 
 
                     case 3:
+                        // Solicita o nome e sobrenome do empregado a ser promovido
                         Console.WriteLine("Digite o nome do empregado:");
                         string nomePromover = Console.ReadLine();
                         Console.WriteLine("Digite o sobrenome do empregado:");
@@ -64,6 +72,7 @@ namespace Projeto
 
 
                     case 4:
+                        // Solicita o nome e sobrenome do empregado a ser demitido
                         Console.WriteLine("Digite o nome do empregado:");
                         string nomeDemitir = Console.ReadLine();
                         Console.WriteLine("Digite o sobrenome do empregado:");
@@ -73,6 +82,7 @@ namespace Projeto
 
 
                     case 5:
+                        // Solicita o nome e sobrenome do empregado para listar o salário anual
                         Console.WriteLine("Digite o nome do empregado:");
                         string nomeSalarioAnual= Console.ReadLine();
                         Console.WriteLine("Digite o sobrenome do empregado:");
@@ -82,6 +92,7 @@ namespace Projeto
 
 
                     case 6:
+                        // Encerra o programa
                         Environment.Exit(0);
                         break;
 
